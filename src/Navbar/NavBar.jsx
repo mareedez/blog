@@ -5,16 +5,27 @@ import {selectSignedIn, setInput, setSignedIn} from "../Actions/User";
 import {useDispatch, useSelector} from "react-redux";
 import GoogleLogin, {GoogleLogout} from "react-google-login";
 export default function NavBar() {
-    const [click, setClick] = useState(false), handleClick = () => setClick(!click),
-        closeMobileMenu = () => setClick(false), [inputValue, setInputValue] = useState(""),
-        isSignedIn = useSelector(selectSignedIn), dispatch = useDispatch(), login = () => {
-            dispatch(setSignedIn(true));
-        }, logout = () => {
-            dispatch(setSignedIn(false));
-        }, handleInput = (e) => {
-            e.preventDefault();
-            dispatch(setInput(inputValue));
-        };
+
+    const [click, setClick] = useState(false);
+    const handleMenuNavigation = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
+
+    const [inputValue, setInputValue] = useState("");
+    const isSignedIn = useSelector(selectSignedIn);
+    const dispatch = useDispatch()
+
+    const login = (response) => {
+        dispatch(setSignedIn(true));
+    };
+
+    const logout = (response) => {
+        dispatch(setSignedIn(false));
+    };
+
+    const handleInput = (e) => {
+        e.preventDefault();
+        dispatch(setInput(inputValue));
+    };
 
     return (
         <nav className="navbar">
@@ -95,7 +106,7 @@ export default function NavBar() {
                     </div>
                 </div>
 
-                <div className="mobile__menu" onClick={handleClick}>
+                <div className="mobile__menu" onClick={handleMenuNavigation}>
                     <i className={click ? "fa-solid fa-times" : "fa-solid fa-bars"} />
                 </div>
 
