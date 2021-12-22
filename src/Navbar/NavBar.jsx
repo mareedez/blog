@@ -27,6 +27,12 @@ export default function NavBar() {
         dispatch(setInput(inputValue));
     };
 
+    const handleKeypress = (event) => {
+        if (event.key === 'Enter') {
+            handleInput(event);
+        }
+    };
+
     return (
         <nav className="navbar">
 
@@ -43,8 +49,8 @@ export default function NavBar() {
                             </Link>
                         </li>
                         <li className='navbar__menu-links'>
-                            <Link to='/technology' className='links' onClick={closeMobileMenu}>
-                                Technology
+                            <Link to='/personal' className='links' onClick={closeMobileMenu}>
+                                Personal
                             </Link>
                         </li>
                         <li className='navbar__menu-links'>
@@ -99,6 +105,7 @@ export default function NavBar() {
                             placeholder="Search"
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
+                            onKeyPress={handleKeypress}
                         />
                     </div>
                     <div className="blog__search-submit" onClick={handleInput}>

@@ -2,7 +2,9 @@ import Blogs from "../../LatestBlog/latestblog";
 
 function Home() {
     return (
-        <Blogs />
+        <div>
+            <Blogs />
+        </div>
     );
 }
 

@@ -15,7 +15,6 @@ const Blogs = () => {
         axios
             .get(blog_url)
             .then((response) => {
-                console.log(response.data.response.docs);
                 dispatch(setBlogData(response.data.response.docs.slice(0, 6)));
                 setBlogs(response.data.response.docs.slice(0, 6));
                 setLoading(false);
@@ -51,11 +50,6 @@ const Blogs = () => {
                         </div>
                     </a>
                 ))}
-                {/*{blogs.length == 0 &&*/}
-                {/*    <h1 className="no__blogs">*/}
-                {/*        Oops! No articles were found. Try another keyword*/}
-                {/*    </h1>*/}
-                {/*}*/}
             </div>
         </div>
     );

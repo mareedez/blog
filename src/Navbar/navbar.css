@@ -11,6 +11,7 @@
     font-size: 16px;
     font-weight: 600;
     top: 0;
+    z-index: 2;
 }
 
 .navbar__menu {
@@ -101,13 +102,32 @@ input:focus {
 @media screen and (max-width: 860px) {
 
     .navbar__social {
-        z-index: 4;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(30%, 60%);
+        display: flex;
+        position: relative;
+        flex: 1;
     }
+
+    .navbar__search {
+        position: relative;
+        flex: 3;
+        justify-content: space-between;
+    }
+
+    .blog__search-submit {
+        display: none;
+    }
+
+    input {
+        width: 100%;
+        height: 30px;
+    }
+
+    input:focus {
+        color: whitesmoke;
+        background-color: #3D31A8;
+        width: 100%;
+    }
+
     .navbar__menu-items {
         display: flex;
         flex-direction: column;
@@ -124,6 +144,7 @@ input:focus {
         right: 0;
         display: none;
         background-color: #382ab5;
+        z-index: 4;
     }
 
     .navbar__menu.active {
@@ -147,11 +168,11 @@ input:focus {
     }
 
     .mobile__menu {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 60%);
+        display: flex;
+        flex: 1;
+        position: relative;
+        justify-content: right;
+        margin-right: 20px;
         z-index: 4;
     }
 
@@ -173,9 +194,5 @@ input:focus {
 
     .navbar__menu-items > li:nth-child(5) {
         background-color:#3C2DC0;
-    }
-
-    .navbar__search {
-        display: none;
     }
 }
