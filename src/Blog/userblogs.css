@@ -48,6 +48,26 @@ body {
     cursor: pointer;
 }
 
+.fa-times-circle {
+    position: absolute;
+    padding: 8px;
+    transition-duration: .3s;
+    opacity: 0;
+}
+
+.fa-times-circle:hover {
+    color: coral;
+}
+
+.blog:hover > .fa-times-circle {
+    opacity: 1;
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -ms-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+}
+
 .blog > div {
     display: flex;
     flex-direction: column;
@@ -112,6 +132,10 @@ body {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+}
+
+.blog:hover > div > h1 {
+    text-decoration: underline;
 }
 
 .blog__desc {

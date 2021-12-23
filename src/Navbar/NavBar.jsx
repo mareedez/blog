@@ -49,18 +49,23 @@ export default function NavBar() {
                             </Link>
                         </li>
                         <li className='navbar__menu-links'>
-                            <Link to='/personal' className='links' onClick={closeMobileMenu}>
-                                Personal
+                            <Link to='/blog' className='links' onClick={closeMobileMenu}>
+                                Blog
                             </Link>
                         </li>
                         <li className='navbar__menu-links'>
-                            <Link to='/business' className='links' onClick={closeMobileMenu}>
-                                Business
+                            <Link to='/guide' className='links' onClick={closeMobileMenu}>
+                                Guide
                             </Link>
                         </li>
                         <li className='navbar__menu-links'>
-                            <Link to='/lifestyle' className='links' onClick={closeMobileMenu}>
-                                Lifestyle
+                            <Link to='/security' className='links' onClick={closeMobileMenu}>
+                                Security
+                            </Link>
+                        </li>
+                        <li className='navbar__menu-links'>
+                            <Link to='/maintenance' className='links' onClick={closeMobileMenu}>
+                                Maintenance
                             </Link>
                         </li>
                     </ul>

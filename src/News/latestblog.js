@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {selectUserInput, setBlogData} from "../Actions/User";
 import "./latestblog.css"
 
-const Blogs = () => {
+const News = () => {
     const searchInput = useSelector(selectUserInput);
     const blog_url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchInput}&api-key=xKELjqGULkJmNrigEeasARIGfGlRwjKo`;
     const dispatch = useDispatch();
@@ -55,4 +55,4 @@ const Blogs = () => {
     );
 };
 
-export default Blogs;
+export default News;

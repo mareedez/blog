@@ -1,9 +1,9 @@
-import Blogs from "../../LatestBlog/latestblog";
+import News from "../../News/latestblog";
 
 function Home() {
     return (
         <div>
-            <Blogs />
+            <News />
         </div>
     );
 }
