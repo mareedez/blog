@@ -1,7 +1,9 @@
 import React from "react";
+import {useSelector} from "react-redux";
+import {selectSignedIn} from "../Actions/User";
 
 const Blogcomponent = ({blogs, header, headerDescription, handleDelete}) => {
-
+    const isSignedIn = useSelector(selectSignedIn);
     return (
         <div className="blog__page">
             <div className="header">{header}</div>
@@ -9,9 +11,9 @@ const Blogcomponent = ({blogs, header, headerDescription, handleDelete}) => {
             <div className="blogs">
                 {blogs?.map((blog) => (
                     <article className="blog" key={blog.id}>
-                        {/*{!isSignedIn ? (*/}
+                        {isSignedIn ? (
                             <span onClick={() => handleDelete(blog.id)} className="fas fa-times-circle" title="delete blog"></span>
-                        {/*)};*/}
+                        ) : ("")}
                             <img src={blog.image}  alt="user content"/>
                         <div className="blog__content">
                             <div className="sourceName">
