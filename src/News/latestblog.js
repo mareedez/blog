@@ -28,7 +28,7 @@ const News = () => {
         <div className="blog__page">
             <div className="header">Popular News</div>
             <div className="header__description">What's trending today</div>
-            {loading ? <h1 className="loading">Loading...</h1> : ""}
+            {loading ? <div className="loader"><div className='loading'></div></div> : ""}
             <div className="blogs">
                 {blogs?.map((blog) => (
                     <a className="blog" target="_blank" rel='noreferrer' href={blog.url}>

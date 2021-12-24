@@ -45,12 +45,7 @@ export default function NavBar() {
                     <ul className="navbar__menu-items">
                         <li className='navbar__menu-links'>
                             <Link to='/' className='links' onClick={closeMobileMenu}>
-                                News
-                            </Link>
-                        </li>
-                        <li className='navbar__menu-links'>
-                            <Link to='/blog' className='links' onClick={closeMobileMenu}>
-                                Blog
+                                Everything
                             </Link>
                         </li>
                         <li className='navbar__menu-links'>

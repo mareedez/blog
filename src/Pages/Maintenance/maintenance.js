@@ -1,20 +1,17 @@
-import React, {useState} from "react";
 import Blogcomponent from "../../BlogComponent/blogcomponent";
-import {data} from "../../Data/data"
+import useFetch from "../../fetch";
 
 const Guide = () => {
     const header = 'Maintenance'
     const headerDescription = 'Keep it healthy'
-    const [blogs, setBlogs] = useState(data);
-    const handleDelete = (id) => {
-        const afterDelete = blogs.filter(blog => blog.id !== id);
-        setBlogs(afterDelete);
-    }
-
+    const {blogs, loading, error} = useFetch('http://localhost:3001/blogs');
     return (
-        <Blogcomponent blogs={blogs.filter((blog) => blog.category==="Maintenance")} header={header} headerDescription={headerDescription} handleDelete={handleDelete}/>
+        <div>
+            {error && <div>{error}</div>}
+            {loading && <div className="loader"><div className='loading'></div></div>}
+            {blogs && <Blogcomponent blogs={blogs.filter((blog) => blog.category==="Maintenance")} header={header} headerDescription={headerDescription}/>}
+        </div>
     );
 };
-
 
 export default Guide;

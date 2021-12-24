@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Run server
 
-### `json-server --watch data.json`
+### `json-server --watch data.json --port 3001`
 
 ## Available Scripts
 
