@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css"
-import {selectSignedIn, setInput, setSignedIn} from "../Actions/User";
+import {selectSignedIn, setInput, setSignedIn, setUserData} from "../Actions/User";
 import {useDispatch, useSelector} from "react-redux";
 import GoogleLogin, {GoogleLogout} from "react-google-login";
 export default function NavBar() {
@@ -16,10 +16,12 @@ export default function NavBar() {
 
     const login = (response) => {
         dispatch(setSignedIn(true));
+        dispatch(setUserData(response.profileObj));
     };
 
     const logout = (response) => {
         dispatch(setSignedIn(false));
+        dispatch(setUserData(null));
     };
 
     const handleInput = (e) => {
@@ -61,6 +63,11 @@ export default function NavBar() {
                         <li className='navbar__menu-links'>
                             <Link to='/maintenance' className='links' onClick={closeMobileMenu}>
                                 Maintenance
+                            </Link>
+                        </li>
+                        <li className='navbar__menu-links'>
+                            <Link to='/personal' className='links' onClick={closeMobileMenu}>
+                                Personal
                             </Link>
                         </li>
                     </ul>

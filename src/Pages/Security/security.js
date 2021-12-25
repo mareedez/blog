@@ -1,16 +1,18 @@
-import React, {useState} from "react";
 import Blogcomponent from "../../BlogComponent/blogcomponent";
-import {data} from "../../Data/data"
+import useFetch from "../../fetch";
 
-const Security = () => {
-    const header = 'User Guides'
-    const headerDescription = 'Step by step'
-    const [blogs, setBlogs] = useState(data);
 
+const Maintenance = () => {
+    const header = 'Security'
+    const headerDescription = 'Stay safe'
+    const {blogs, loading, error} = useFetch('http://localhost:3001/blogs');
     return (
-        <Blogcomponent blogs={blogs.filter((blog) => blog.category==="Security")} header={header} headerDescription={headerDescription}/>
+        <div>
+            {error && <div>{error}</div>}
+            {loading && <div className="loader"><div className='loading'></div></div>}
+            {blogs && <Blogcomponent blogs={blogs.filter((blog) => blog.category==="Security")} header={header} headerDescription={headerDescription}/>}
+        </div>
     );
-};
+}
 
-
-export default Security;
+export default Maintenance;

@@ -5,6 +5,8 @@ import Blog from "./Blog/userblogs";
 import Guide from "./Pages/Guide/guide"
 import Security from "./Pages/Security/security";
 import Maintenance from "./Pages/Maintenance/maintenance";
+import Addblog from "./Pages/Personal/addblog";
+import Blogpage from "./Pages/blogpage";
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
                   <Route exact path='/guide' element={<Guide/>} />
                   <Route exact path='/security' element={<Security/>} />
                   <Route exact path='/maintenance' element={<Maintenance/>} />
+                  <Route exact path='/personal' element={<Addblog/>} />
+                  <Route path='/blogs/:id' element={<Blogpage/>} />
               </Routes>
           </Router>
 

@@ -87,8 +87,6 @@ input {
 
 input:focus {
     outline: none;
-    background-color: white;
-    color: #382ab5;
     width: 20vw;
 }
 

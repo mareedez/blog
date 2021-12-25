@@ -1,7 +1,8 @@
 import Blogcomponent from "../../BlogComponent/blogcomponent";
 import useFetch from "../../fetch";
 
-const Guide = () => {
+
+const Maintenance = () => {
     const header = 'Maintenance'
     const headerDescription = 'Keep it healthy'
     const {blogs, loading, error} = useFetch('http://localhost:3001/blogs');
@@ -12,6 +13,6 @@ const Guide = () => {
             {blogs && <Blogcomponent blogs={blogs.filter((blog) => blog.category==="Maintenance")} header={header} headerDescription={headerDescription}/>}
         </div>
     );
-};
+}
 
-export default Guide;
+export default Maintenance;
