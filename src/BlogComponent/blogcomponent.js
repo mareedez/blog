@@ -25,9 +25,11 @@ const Blogcomponent = ({blogs, header, headerDescription}) => {
                         ) : ("")}
                             <img src={blog.image}  alt="user content"/>
                             <div className="blog__content">
-                                <div className="sourceName">
-                                    <span><div className='dot'></div> {blog.category}</span>
-                                </div>
+                                <Link className="blog__redirect" to={`/${blog.category}`}>
+                                    <div className="sourceName">
+                                        <span><div className='dot'></div> {blog.category}</span>
+                                    </div>
+                                </Link>
                                 <div className="blog__data">
                                     By <span className='blog__data-author'>{blog.posted}</span>
                                     <span className='blog__data-divider'>&#9675;</span>

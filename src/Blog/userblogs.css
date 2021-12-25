@@ -105,6 +105,14 @@ body {
     align-items: center;
 }
 
+.sourceName:hover  > span {
+    color: palevioletred;
+}
+
+.sourceName:hover  > span > div {
+    background-color: palevioletred;
+}
+
 .blog__data {
     font-size: 12px;
     font-weight: 600;
