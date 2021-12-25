@@ -5,14 +5,13 @@ import {Link, useNavigate} from "react-router-dom";
 import useFetch from "../fetcher";
 
 const Blogcomponent = ({blogs, header, headerDescription}) => {
-    const navigation = useNavigate()
     const isSignedIn = useSelector(selectSignedIn);
     const {blogs: blog} = useFetch('http://localhost:3001/blogs/');
     const handleDelete = value => () => {
         fetch('http://localhost:3001/blogs/' + value, {
             method: 'DELETE'
         }).then(() => {
-            navigation('/')
+            window.location.reload()
         })
     }
 
