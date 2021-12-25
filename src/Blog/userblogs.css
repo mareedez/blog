@@ -192,6 +192,14 @@ body {
     }
 }
 
+@media screen and (max-width: 796px) {
+    .blogs {
+        display: flex;
+        flex-direction: column;
+        min-width: 320px;
+    }
+}
+
 
 /* addblog */
 
@@ -270,4 +278,83 @@ select {
     background-color: palevioletred;
     border-color: palevioletred;
     color: white;
+}
+
+@media screen and (max-width: 860px) {
+    .addblog {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* blogpage */
+
+.blog__article {
+    box-sizing: border-box;
+    color: white;
+    width: 60vw;
+    margin: 0 auto;
+    min-width: 320px;
+}
+
+.blog__article p {
+    padding: 20px 0;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.blog__article h2 {
+    margin-top: 10px;
+}
+
+.blog__header {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+}
+
+.blog__body {
+    margin-top: 20px;
+}
+
+blockquote {
+    display: block;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #4F40D2;
+    padding: 30px 0 20px;
+    margin: 20px 0 30px;
+    position: relative;
+    line-height: 30px;
+    color: #C3C3F3;
+}
+
+hr {
+    color: #4F40D2;
+    margin-top: 10px;
+}
+
+blockquote:before {
+    content: '\201C';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #362b93;
+    width: 3rem;
+    height: 2rem;
+    font: 6em/1.08em 'PT Sans', sans-serif;
+    color: lightpink;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+blockquote:after {
+    content: "\2013 \2003" attr(cite);
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    font-style: oblique;
+    color: lightpink;
 }

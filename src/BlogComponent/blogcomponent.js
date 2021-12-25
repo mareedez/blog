@@ -1,12 +1,10 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {selectSignedIn} from "../Actions/User";
-import {Link, useNavigate} from "react-router-dom";
-import useFetch from "../fetcher";
+import {Link} from "react-router-dom";
 
 const Blogcomponent = ({blogs, header, headerDescription}) => {
     const isSignedIn = useSelector(selectSignedIn);
-    const {blogs: blog} = useFetch('http://localhost:3001/blogs/');
     const handleDelete = value => () => {
         fetch('http://localhost:3001/blogs/' + value, {
             method: 'DELETE'
