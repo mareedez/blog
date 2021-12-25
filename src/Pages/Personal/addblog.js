@@ -1,7 +1,6 @@
 import {useState} from "react";
 import {useSelector} from "react-redux";
 import {selectUserData} from "../../Actions/User";
-import fetch from "../../fetch";
 import {useNavigate} from 'react-router-dom'
 
 const Addblog = () => {
@@ -24,7 +23,7 @@ const Addblog = () => {
         setIsSending(true)
         fetch('http://localhost:3001/blogs', {
             method: 'POST',
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(blog)
         }).then(() => {
             setIsSending(false);
