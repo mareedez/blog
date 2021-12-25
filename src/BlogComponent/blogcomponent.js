@@ -2,16 +2,14 @@ import React from "react";
 import {useSelector} from "react-redux";
 import {selectSignedIn} from "../Actions/User";
 import {Link, useNavigate} from "react-router-dom";
-import {useParams} from "react-router-dom";
-import useFetch from "../fetch";
+import useFetch from "../fetcher";
 
 const Blogcomponent = ({blogs, header, headerDescription}) => {
     const navigation = useNavigate()
     const isSignedIn = useSelector(selectSignedIn);
-    const {id} = useParams()
-    const {blogs: blog} = useFetch('http://localhost:3001/blogs/' + id);
-    const handleDelete = () => {
-        fetch('http://localhost:3001/blogs/' + id, {
+    const {blogs: blog} = useFetch('http://localhost:3001/blogs/');
+    const handleDelete = value => () => {
+        fetch('http://localhost:3001/blogs/' + value, {
             method: 'DELETE'
         }).then(() => {
             navigation('/')
@@ -26,7 +24,7 @@ const Blogcomponent = ({blogs, header, headerDescription}) => {
                 {blogs?.map((blog) => (
                     <article className="blog" key={blog.id}>
                         {isSignedIn ? (
-                            <span onClick={handleDelete} className="fas fa-times-circle" title="delete blog"></span>
+                            <span onClick={handleDelete(blog.id)} className="fas fa-times-circle" title="delete blog"></span>
                         ) : ("")}
                             <img src={blog.image}  alt="user content"/>
                             <div className="blog__content">

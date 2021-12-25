@@ -1,5 +1,5 @@
 import Blogcomponent from "../BlogComponent/blogcomponent";
-import useFetch from "../fetch";
+import useFetch from "../fetcher";
 import './userblogs.css'
 
 
