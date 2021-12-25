@@ -313,6 +313,38 @@ select {
     min-width: 320px;
 }
 
+.blog__article-back {
+   all: unset;
+    cursor: pointer;
+    font-size: 14px;
+    color: #362b93;
+    font-weight: 800;
+    margin: 0 12px 24px 0;
+    background-color: white;
+    padding: 4px 14px;
+    border: 1px solid white;
+    border-radius: 30px;
+    transition-duration: .3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+.blog__article-back:hover {
+    color: white;
+    background-color: palevioletred;
+    border-color: palevioletred;
+}
+
+.bottom {
+    margin-top: 30px;
+}
+
 .blog__article p {
     padding: 20px 0;
     line-height: 28px;
@@ -372,5 +404,5 @@ blockquote:after {
     text-align: right;
     font-size: 14px;
     font-style: oblique;
-    color: lightpink;
+    color: whitesmoke;
 }

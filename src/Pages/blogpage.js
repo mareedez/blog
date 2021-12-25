@@ -1,10 +1,13 @@
 import {useParams} from "react-router-dom";
 import useFetch from "../fetcher";
 import React from "react";
+import {useNavigate} from "react-router-dom";
 
 const BlogMain = () => {
     const {id} = useParams()
     const {blogs: blog, loading, error} = useFetch('http://localhost:3001/blogs/' + id);
+    const navigate = useNavigate();
+
 
     return (
         <div className='blog__page'>
@@ -12,6 +15,7 @@ const BlogMain = () => {
             {loading && <div className="loader"><div className='loading'></div></div>}
             { blog && (
                 <article className="blog__article">
+                    <button className="blog__article-back" onClick={() => navigate(-1)}>Back</button>
                     <div className='blog__header'>{blog.title}</div>
                     <div className="blog__data">
                         By <span className='blog__data-author'>{blog.posted}</span>
@@ -58,8 +62,11 @@ const BlogMain = () => {
                                 caching system which data to delete first in order to make room for new data.
                                 If you want to try this out, you may want to contact your hosting provider for assistance.
                             </p>
+                            <hr />
                         </div>
                     </div>
+                    <button className="blog__article-back bottom" onClick={() => navigate(-1)}>Back</button>
+                    <button className="blog__article-back bottom"><a href="#top">To Top</a></button>
                 </article>
             )}
         </div>
