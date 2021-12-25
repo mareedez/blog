@@ -1,12 +1,9 @@
 import {useEffect, useState} from "react";
-import {useSelector} from "react-redux";
-import {selectUserInput} from "./Actions/User";
 
     const useFetch = (url) => {
         const [blogs, setBlogs] = useState(null);
         const [loading, setLoading] = useState(true);
         const [error, setError] = useState(null);
-        const searchInput = useSelector(selectUserInput);
 
         useEffect(() => {
             const control = new AbortController();
@@ -32,7 +29,7 @@ import {selectUserInput} from "./Actions/User";
                     }
                 })
             return () => control.abort()
-        }, [url, searchInput]);
+        }, [url]);
 
         return {blogs, loading, error}
 }

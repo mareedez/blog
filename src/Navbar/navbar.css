@@ -28,7 +28,7 @@
 }
 
 .navbar__search {
-    flex: 1.5;
+    flex: 1;
 }
 
 .navbar__social {
@@ -90,13 +90,20 @@ input:focus {
     width: 20vw;
 }
 
-.navbar__login {
-    padding: 20px;
+.login, .logout{
+    background-color: #362b93;
+    border: 1px solid #362b93;
+    border-radius: 30px;
+    padding: 7px 16px;
+    font-weight: 600;
+    color: white;
     cursor: pointer;
+
 }
 
-.navbar__login:hover {
-    color: lightpink;
+.login:hover, .logout:hover {
+    background-color: palevioletred;
+    border-color: palevioletred;
     transition-duration: .3s;
 }
 
@@ -110,12 +117,8 @@ input:focus {
 
     .navbar__search {
         position: relative;
-        flex: 3;
-        justify-content: space-between;
-    }
-
-    .blog__search-submit {
-        display: none;
+        flex: 1;
+        justify-content: left;
     }
 
     input {

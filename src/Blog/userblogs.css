@@ -56,7 +56,7 @@ body {
 }
 
 .fa-times-circle:hover {
-    color: coral;
+    color: palevioletred;
 }
 
 .blog:hover > .fa-times-circle {
@@ -200,6 +200,13 @@ body {
     }
 }
 
+@media screen and (min-width: 796px) and (max-width: 1200px) {
+    .blogs {
+        grid-template-columns : 1fr 1fr;
+        column-gap: 5vw;
+    }
+}
+
 
 /* addblog */
 
@@ -284,6 +291,7 @@ select {
     .addblog {
         width: 100%;
         margin: 0;
+        min-width: 320px;
     }
 }
 
