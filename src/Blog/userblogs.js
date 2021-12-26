@@ -1,7 +1,5 @@
 import Blogcomponent from "../BlogComponent/blogcomponent";
 import useFetch from "../fetcher";
-import './userblogs.css'
-
 
 const Blogpage = () => {
     const header = 'Community Blog'
