@@ -7,11 +7,12 @@ body {
 }
 
 .blog__page {
-    padding: 170px 50px 50px 50px;
+    padding: 170px 50px 90px 50px;
     background-color: #362b93;
     max-width: 1300px;
     justify-content: center;
     margin: 0 auto;
+    min-height: 100vh;
 }
 
 .header {
@@ -405,4 +406,56 @@ blockquote:after {
     font-size: 14px;
     font-style: oblique;
     color: whitesmoke;
+}
+
+
+/*footer*/
+
+.footer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    background-color: #2b208d;
+    color: white;
+    font-family: Nunito, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    bottom: 0;
+}
+
+.footer__title {
+    margin: 10px 0 10px;
+    font-weight: 500;
+}
+
+.footer__social, .footer__links, .footer__resources {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.links__footer {
+    color: #C3C3F3;
+    line-height: 28px;
+    cursor: pointer;
+    transition-duration: .3s;
+}
+
+.links__footer:hover {
+    color: white;
+}
+
+.footer__links-ul, .footer__social-ul {
+    margin: 0;
+    list-style: none inside none;
+    padding: 0;
+}
+
+@media screen and (max-width: 610px)
+{
+    .footer__resources {
+        display: none;
+    }
 }

@@ -7,6 +7,7 @@ import Security from "./Pages/Security/security";
 import Maintenance from "./Pages/Maintenance/maintenance";
 import Blogpage from "./Pages/blogpage";
 import Personal from "./Pages/Personal/personal";
+import Footer from "./Footer/footer";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                   <Route exact path='/personal' element={<Personal/>} />
                   <Route path='/blogs/:id' element={<Blogpage/>} />
               </Routes>
+              <Footer />
           </Router>
 
   );
